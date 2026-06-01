@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blifty | E-Commerce Modern & Interaktif</title>
+
+    <!-- Meta SEO -->
+    <meta name="description"
+        content="Blifty - Platform e-commerce premium untuk gadget dan aksesoris modern dengan antarmuka interaktif, dark mode, dan performa super cepat.">
+    <meta name="keywords"
+        content="e-commerce, blifty, gadget premium, headphones, smartwatch, mechanical keyboard, backpack, speaker, mouse">
+    <meta name="author" content="Blifty Group">
+
+    <!-- Link Font & Icons -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- --- TOAST NOTIFICATIONS --- -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- --- GLASS NAVIGATION HEADER --- -->
+    <header class="header" id="main-header">
+        <div class="container navbar">
+            <!-- Brand Logo -->
+            <a href="#" class="brand" id="brand-logo">
+                BLIFTY SHOP<span class="brand-dot"></span>
+            </a>
+
+            <!-- Navigation Menu -->
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#" class="nav-link active" id="nav-link-home">Home</a></li>
+                <li><a href="#shop" class="nav-link" id="nav-link-shop">Shop</a></li>
+                <li><a href="#features" class="nav-link" id="nav-link-features">Features</a></li>
+                <li><a href="#about" class="nav-link" id="nav-link-about">About</a></li>
+            </ul>
+
+            <!-- Nav Actions -->
+            <div class="nav-actions">
+                <!-- Theme Toggle -->
+                <button class="nav-btn" id="theme-toggle-btn" title="Ubah Tema" aria-label="Ubah Tema">
+                    <i class="fa-solid fa-moon" id="theme-icon"></i>
+                </button>
+
+                <!-- Wishlist Toggle -->
+                <button class="nav-btn" id="wishlist-toggle-btn" title="Wishlist" aria-label="Wishlist">
+                    <i class="fa-solid fa-heart"></i>
+                    <span class="badge" id="wishlist-badge">0</span>
+                </button>
+
+                <!-- Cart Toggle -->
+                <button class="nav-btn" id="cart-toggle-btn" title="Keranjang Belanja" aria-label="Keranjang Belanja">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="badge" id="cart-badge">0</span>
+                </button>
+
+                <!-- Hamburger Menu for Mobile -->
+                <button class="nav-btn menu-toggle" id="menu-toggle-btn" title="Menu" aria-label="Buka Menu">
+                    <i class="fa-solid fa-bars" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- --- HERO SECTION --- -->
+    <section class="hero" id="home">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="hero-tag" id="hero-tag-badge">
+                    <i class="fa-solid fa-star"></i> Koleksi Premium Terbaru 2026
+                </span>
+                <h1 class="hero-title" id="hero-title-text">
+                    Definisi Baru <span>Gaya Hidup</span> & Teknologi
+                </h1>
+                <p class="hero-desc" id="hero-desc-text">
+                    Hadirkan harmoni sempurna antara estetika minimalis modern dan teknologi mutakhir. Dikurasi secara
+                    presisi untuk kenyamanan dan produktivitas Anda.
+                </p>
+                <div class="hero-cta">
+                    <a href="#shop" class="btn btn-primary" id="hero-btn-primary">
+                        <i class="fa-solid fa-cart-shopping"></i> Mulai Belanja
+                    </a>
+                    <a href="#features" class="btn btn-secondary" id="hero-btn-secondary">
+                        Pelajari Selengkapnya
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-bg-glow"></div>
+                <div class="hero-image-wrapper" id="hero-image-wrapper">
+                    <!-- Menampilkan headphone premium yang dihasilkan AI -->
+                    <img src="assets/headphones.png" alt="AURA SoundMax Premium Headphones" id="hero-main-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- STATS BAR --- -->
+    <section class="stats-bar" id="features">
+        <div class="container stats-grid">
+            <div class="stat-item" id="stat-1">
+                <div class="stat-num">99.4<span>%</span></div>
+                <div class="stat-label">Kepuasan Pelanggan</div>
+            </div>
+            <div class="stat-item" id="stat-2">
+                <div class="stat-num">15<span>K+</span></div>
+                <div class="stat-label">Barang Terkirim</div>
+            </div>
+            <div class="stat-item" id="stat-3">
+                <div class="stat-num">24<span>/7</span></div>
+                <div class="stat-label">Dukungan Concierge</div>
+            </div>
+            <div class="stat-item" id="stat-4">
+                <div class="stat-num">3<span>Thn</span></div>
+                <div class="stat-label">Garansi Internasional</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- SHOP SECTION (PRODUCT GRID & INTERACTIVE FILTERS) --- -->
+    <section class="shop-section" id="shop">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-title-wrap">
+                    <span class="subtitle" id="shop-subtitle">Koleksi Terpilih</span>
+                    <h2 class="section-title" id="shop-title">Mahakarya Estetik</h2>
+                </div>
+            </div>
+
+            <!-- Search, Filter & Sorting Bar -->
+            <div class="filter-container" id="filter-container">
+                <div class="filter-top">
+                    <!-- Real-Time Search -->
+                    <div class="search-box" id="search-box-wrap">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="product-search" placeholder="Cari mahakarya produk...">
+                    </div>
+                    <!-- Sorting Dropdown -->
+                    <div class="sort-box" id="sort-box-wrap">
+                        <select id="product-sort">
+                            <option value="recommended">Rekomendasi Terbaik</option>
+                            <option value="price-low">Harga: Rendah ke Tinggi</option>
+                            <option value="price-high">Harga: Tinggi ke Rendah</option>
+                            <option value="rating">Rating Terpopuler</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Category Filtering Tabs -->
+                <div class="category-tabs" id="category-tabs">
+                    <button class="tab-btn active" data-category="all" id="tab-all">Semua</button>
+                    <button class="tab-btn" data-category="gadget" id="tab-gadget">Gadget</button>
+                    <button class="tab-btn" data-category="computer" id="tab-computer">Komputer</button>
+                    <button class="tab-btn" data-category="audio" id="tab-audio">Audio</button>
+                    <button class="tab-btn" data-category="office" id="tab-office">Kamera & Kantor</button>
+                </div>
+            </div>
+
+            <!-- Dynamic Product Grid -->
+            <div class="products-grid" id="products-grid">
+                <!-- Javascript will inject products here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- --- ABOUT / PROMO SECTION --- -->
+    <section class="shop-section" id="about"
+        style="background: var(--bg-tertiary); border-radius: var(--radius-lg); margin: 0 1.5rem; padding: 5rem 0;">
+        <div class="container hero-grid" style="grid-template-columns: 0.9fr 1.1fr;">
+            <div class="hero-visual">
+                <div class="hero-bg-glow"
+                    style="width: 250px; height: 250px; background: linear-gradient(135deg, rgba(236, 72, 153, 0.2), rgba(245, 158, 11, 0.2));">
+                </div>
+                <div class="hero-image-wrapper" style="animation-delay: -2s;">
+                    <img src="assets/smartwatch.png" alt="Premium Smartwatch Design">
+                </div>
+            </div>
+            <div class="hero-content">
+                <span class="subtitle">Filosofi Desain Kami</span>
+                <h2 class="section-title" style="margin-bottom: 1.5rem; font-size: 2.5rem;">Dibuat Dengan Presisi Tinggi
+                </h2>
+                <p class="hero-desc" style="margin-bottom: 2rem;">
+                    Kami percaya bahwa teknologi terbaik tidak hanya canggih di dalam, tapi juga harus memanjakan mata
+                    di luar. Setiap lengkungan, pemilihan bahan, dan transisi cahaya dirancang khusus untuk menciptakan
+                    pengalaman pengguna yang tiada duanya.
+                </p>
+                <div class="hero-cta" style="justify-content: flex-start;">
+                    <div style="display: flex; gap: 2rem;">
+                        <div>
+                            <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--accent-primary);"><i
+                                    class="fa-solid fa-leaf"></i> Eco-Premium</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);">Material daur ulang kelas
+                                tinggi.</p>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--accent-secondary);"><i
+                                    class="fa-solid fa-wand-magic-sparkles"></i> Ergonomis</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);">Kenyamanan maksimal untuk
+                                produktivitas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- CART DRAWER SIDEBAR --- -->
+    <div class="cart-drawer-overlay" id="cart-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h3 class="cart-title"><i class="fa-solid fa-bag-shopping" style="color: var(--accent-primary);"></i>
+                Keranjang Anda</h3>
+            <button class="cart-close-btn" id="cart-close-btn" aria-label="Tutup Keranjang">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <!-- Cart Items List Container -->
+        <div class="cart-items-container" id="cart-items-container">
+            <!-- Dynamic Cart Items injected by JS -->
+        </div>
+
+        <!-- Cart Footer with Totals -->
+        <div class="cart-footer">
+            <div class="cart-totals">
+                <div class="total-row">
+                    <span>Subtotal</span>
+                    <span id="cart-subtotal">Rp 0</span>
+                </div>
+                <div class="total-row">
+                    <span>Pajak PPN (11%)</span>
+                    <span id="cart-tax">Rp 0</span>
+                </div>
+                <div class="total-row grand-total">
+                    <span>Total Keseluruhan</span>
+                    <span id="cart-total">Rp 0</span>
+                </div>
+            </div>
+            <button class="cart-checkout-btn" id="cart-checkout-btn">
+                <i class="fa-solid fa-credit-card"></i> Lanjutkan Pembayaran (Checkout)
+            </button>
+        </div>
+    </div>
+
+    <!-- --- MODAL SYSTEM: PRODUCT QUICK VIEW & CHECKOUT --- -->
+    <div class="modal-overlay" id="modal-overlay">
+        <!-- Inside this container we will inject the quick-view or checkout template -->
+        <div class="modal-content" id="modal-content-area">
+            <!-- Dynamic modal content injected by JS -->
+        </div>
+    </div>
+
+    <!-- --- FOOTER --- -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-logo-desc">
+                <a href="#" class="brand" style="margin-bottom: 1rem;">
+                    BLIFTY<span class="brand-dot"></span>
+                </a>
+                <p class="footer-desc">
+                    Toko gadget dan aksesoris gaya hidup premium paling tepercaya dengan desain modern, pelayanan
+                    berkelas, dan jaminan orisinalitas tinggi.
+                </p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-link" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="footer-heading">Navigasi Cepat</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#shop">Belanja Produk</a></li>
+                    <li><a href="#features">Kelebihan</a></li>
+                    <li><a href="#about">Filosofi Kami</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="footer-heading">Layanan Concierge</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Bantuan & Support</a></li>
+                    <li><a href="#">Kebijakan Garansi</a></li>
+                    <li><a href="#">Pelacakan Pengiriman</a></li>
+                    <li><a href="#">Kebijakan Pengembalian</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-newsletter">
+                <h4 class="footer-heading">Berlangganan Kabar</h4>
+                <p>Dapatkan diskon eksklusif 15% untuk koleksi perdana Anda.</p>
+                <form class="newsletter-form" id="newsletter-form"
+                    onsubmit="event.preventDefault(); alert('Terima kasih telah berlangganan newsletter kami!'); this.reset();">
+                    <input type="email" placeholder="Email Anda..." required aria-label="Alamat Email">
+                    <button type="submit" class="btn btn-primary" aria-label="Kirim"><i
+                            class="fa-solid fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Blifty. Dibuat dengan cinta untuk Web Modern & Interaktif.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Syarat & Ketentuan</a>
+                <a href="#">Kebijakan Privasi</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- --- CORE INTERACTIVE JAVASCRIPT --- -->
+    <script>
+        // --- PRODUCTS DATABASE ---
+        const products = [
+            {
+                id: "p1",
+                name: "iPhone 15 Pro Max Titanium",
+                category: "gadget",
+                price: 22499000,
+                oldPrice: 24999000,
+                rating: 4.9,
+                reviews: 248,
+                image: "https://images.unsplash.com/photo-1616348436168-de43ad0db179?q=80&w=600&auto=format&fit=crop",
+                tag: "Terlaris",
+                desc: "Miliki puncak inovasi teknologi! iPhone 15 Pro Max berbalut titanium kelas dirgantara, ditenagai chip A17 Pro yang revolusioner untuk performa gaming terbaik dan kamera sinematik tiada tanding.",
+                colors: ["#4b5563", "#e5e7eb", "#1f2937"],
+                colorNames: ["Natural Titanium", "White Titanium", "Black Titanium"],
+                specs: ["Chip A17 Pro", "Bodi Titanium Ringan", "Kamera Utama 48MP", "Layar Super Retina XDR"]
+            },
+            {
+                id: "p2",
+                name: "MacBook Pro 16\" M3 Max",
+                category: "computer",
+                price: 48999000,
+                oldPrice: null,
+                rating: 4.9,
+                reviews: 164,
+                image: "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?q=80&w=600&auto=format&fit=crop",
+                tag: "Terpopuler",
+                desc: "Monster performa untuk para profesional kreatif. Ditenagai oleh chip Apple M3 Max, laptop ini melibas rendering video 8K dan kompilasi kode berat dengan daya tahan baterai hingga 22 jam.",
+                colors: ["#374151", "#d1d5db"],
+                colorNames: ["Space Black", "Silver Metallic"],
+                specs: ["Chip Apple M3 Max", "RAM 36GB Unified Memory", "Layar Liquid Retina XDR", "Baterai 22 Jam"]
+            },
+            {
+                id: "p3",
+                name: "Zenith Pro Ultimate PC",
+                category: "computer",
+                price: 35500000,
+                oldPrice: 39000000,
+                rating: 4.8,
+                reviews: 82,
+                image: "https://images.unsplash.com/photo-1587831990711-23ca6441447b?q=80&w=600&auto=format&fit=crop",
+                tag: "Kerja Berat",
+                desc: "Komputer PC workstation berkinerja ekstrem untuk profesional dan kreator. Dilengkapi kartu grafis RTX 4080 Super dan sistem pendingin cair ultra-hening untuk stabilitas kerja 24/7.",
+                colors: ["#09090b"],
+                colorNames: ["Deep Obsidian Black"],
+                specs: ["Intel Core i9 14th Gen", "RTX 4080 Super 16GB", "RAM 64GB DDR5 RGB", "Liquid Cooling 360mm"]
+            },
+            {
+                id: "p4",
+                name: "iPad Pro 13\" M4 Ultra",
+                category: "gadget",
+                price: 18250000,
+                oldPrice: null,
+                rating: 4.7,
+                reviews: 104,
+                image: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?q=80&w=600&auto=format&fit=crop",
+                tag: "Terbaru",
+                desc: "Kanvas digital tertipis dan tercanggih di dunia. Memadukan layar Tandem OLED yang menakjubkan dengan chip M4 revolusioner, menghadirkan presisi gambar sempurna untuk desainer papan atas.",
+                colors: ["#1f2937", "#f3f4f6"],
+                colorNames: ["Space Grey", "Silver White"],
+                specs: ["Layar Tandem OLED", "Chip Apple M4 Cepat", "Mendukung Apple Pencil Pro", "Ketebalan Hanya 5.1mm"]
+            },
+            {
+                id: "p5",
+                name: "Canon Pixma Smart Pro",
+                category: "office",
+                price: 3850000,
+                oldPrice: 4200000,
+                rating: 4.6,
+                reviews: 73,
+                image: "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?q=80&w=600&auto=format&fit=crop",
+                tag: "Diskon",
+                desc: "Cetak dokumen dan foto sekelas studio secara instan dari ponsel Anda! Printer tangki tinta nirkabel ini sangat hemat energi, menghasilkan warna tajam tahan pudar dengan biaya cetak super murah.",
+                colors: ["#18181b", "#ffffff"],
+                colorNames: ["Midnight Black", "Glacier White"],
+                specs: ["Cetak Nirkabel Wi-Fi", "Sistem Tangki Tinta Pintar", "Resolusi Foto Studio 4800dpi", "Cetak Dupleks Otomatis"]
+            },
+            {
+                id: "p6",
+                name: "ScanMaster Pro Document",
+                category: "office",
+                price: 2450000,
+                oldPrice: 2990000,
+                rating: 4.7,
+                reviews: 51,
+                image: "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?q=80&w=600&auto=format&fit=crop",
+                tag: "Kantor",
+                desc: "Digitalkan arsip Anda dalam hitungan detik. Scanner dokumen flatbed berkecepatan tinggi ini dilengkapi sensor optik ultra-detail dan OCR pintar untuk merubah berkas fisik menjadi file pencarian teks digital.",
+                colors: ["#374151"],
+                colorNames: ["Graphite Grey"],
+                specs: ["Scanning Cepat 30ppm", "Resolusi Optik 2400dpi", "Fitur Auto OCR Pintar", "Koneksi USB 3.0 Cepat"]
+            },
+            {
+                id: "p7",
+                name: "Lumix Alpha Mirrorless",
+                category: "office",
+                price: 27900000,
+                oldPrice: null,
+                rating: 4.9,
+                reviews: 93,
+                image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=600&auto=format&fit=crop",
+                tag: "Eksklusif",
+                desc: "Tangkap keindahan dunia dengan detail sensor full-frame 61 Megapiksel! Kamera mirrorless profesional ini menawarkan autofokus pelacak mata bertenaga AI dan perekaman video 4K sinematik 10-bit.",
+                colors: ["#111827"],
+                colorNames: ["Stealth Black"],
+                specs: ["Sensor Full-Frame 61MP", "Autofokus AI Tracking", "Video 4K 60fps 10-bit", "Stabilisasi Gambar 5-Axis"]
+            },
+            {
+                id: "p8",
+                name: "Edifier Woodcraft Active",
+                category: "audio",
+                price: 4250000,
+                oldPrice: null,
+                rating: 4.8,
+                reviews: 114,
+                image: "https://images.unsplash.com/photo-1545454675-3531b543be5d?q=80&w=600&auto=format&fit=crop",
+                tag: "Hi-Fi Audio",
+                desc: "Rasakan kehangatan musik akustik sejati! Speaker aktif kayu buatan tangan ini mengintegrasikan amplifier internal bertenaga tinggi, menghasilkan dentuman vokal sejernih kristal dan konektivitas nirkabel Bluetooth HD.",
+                colors: ["#7c2d12", "#1e293b"],
+                colorNames: ["Natural Cherry Wood", "Slate Grey Wood"],
+                specs: ["Bodi Kayu Alami Murni", "Daya Output RMS 120W", "Koneksi Bluetooth 5.0 aptX", "Input Optik & RCA"]
+            },
+            {
+                id: "p9",
+                name: "Sony WH-1000XM5 Premium",
+                category: "audio",
+                price: 5199000,
+                oldPrice: 5999000,
+                rating: 4.9,
+                reviews: 312,
+                image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=600&auto=format&fit=crop",
+                tag: "Peredam Bising",
+                desc: "Standar emas isolasi suara dunia. Nikmati kesunyian mutlak dengan peredam bising aktif tercanggih di industri dan kenyamanan pemakaian ultra-ringan sepanjang hari.",
+                colors: ["#1c1917", "#f5f5f4"],
+                colorNames: ["Midnight Black", "Platinum Silver"],
+                specs: ["Peredam Bising Terunggul", "Driver Khusus 30mm", "Panggilan Jernih 4 Mikrofon", "Daya Baterai 30 Jam"]
+            },
+            {
+                id: "p10",
+                name: "AirPods Pro Gen 2 Cerdas",
+                category: "audio",
+                price: 3899000,
+                oldPrice: null,
+                rating: 4.8,
+                reviews: 194,
+                image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?q=80&w=600&auto=format&fit=crop",
+                tag: "Favorit",
+                desc: "Pengalaman audio spasial personal yang memukau. Earbuds nirkabel cerdas dengan chip H2 untuk peredam bising aktif 2x lebih kuat, audio adaptif pintar, dan kontrol sentuh usap yang sangat intuitif.",
+                colors: ["#ffffff"],
+                colorNames: ["Pearl White"],
+                specs: ["Chip Apple H2 Cerdas", "ANC 2x Lebih Kuat", "Audio Spasial Dinamis", "Casing MagSafe Speaker"]
+            },
+            {
+                id: "p11",
+                name: "CinemaVision 4K Smart",
+                category: "office",
+                price: 14500000,
+                oldPrice: 16900000,
+                rating: 4.8,
+                reviews: 67,
+                image: "https://images.unsplash.com/photo-1601944179066-29786cb9d32a?q=80&w=600&auto=format&fit=crop",
+                tag: "Smart Home",
+                desc: "Hadirkan bioskop megah ke dalam ruang keluarga Anda. Proyektor pintar ultra-pendek beresolusi 4K dengan tingkat kecerahan 2200 ANSI Lumens, menghasilkan warna kontras bioskop HDR10+ yang memukau.",
+                colors: ["#ffffff", "#1e293b"],
+                colorNames: ["Polar White", "Space Indigo"],
+                specs: ["Proyeksi Resolusi Real 4K", "Tingkat Terang 2200 ANSI", "Android TV OS Bawaan", "Audio Premium Harman Kardon"]
+            },
+            {
+                id: "p12",
+                name: "Watch Ultra Steel Pro",
+                category: "gadget",
+                price: 7450000,
+                oldPrice: null,
+                rating: 4.7,
+                reviews: 143,
+                image: "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?q=80&w=600&auto=format&fit=crop",
+                tag: "Tangguh",
+                desc: "Partner terbaik untuk mendobrak batas kemampuan Anda. Smartwatch dengan ketahanan militer berbahan baja anti-karat, GPS presisi frekuensi ganda, pemantauan jantung tingkat lanjut, dan daya tahan baterai 7 hari.",
+                colors: ["#e2e8f0", "#09090b"],
+                colorNames: ["Brushed Steel", "Stealth Black"],
+                specs: ["Bodi Baja Tahan Karat", "Ketahanan Militer MIL-STD", "GPS Frekuensi Ganda", "Pelacak Oksigen & Jantung"]
+            }
+        ];
+
+        // --- APP STATE ---
+        let cart = JSON.parse(localStorage.getItem('blifty_cart')) || [];
+        let wishlist = JSON.parse(localStorage.getItem('blifty_wishlist')) || [];
+        let activeCategory = 'all';
+        let currentSearchQuery = '';
+        let currentSortOrder = 'recommended';
+        let isDarkMode = localStorage.getItem('blifty_darkmode') === 'true';
+
+        // --- DOM ELEMENTS ---
+        const mainHeader = document.getElementById('main-header');
+        const themeToggleBtn = document.getElementById('theme-toggle-btn');
+        const themeIcon = document.getElementById('theme-icon');
+        const wishlistToggleBtn = document.getElementById('wishlist-toggle-btn');
+        const wishlistBadge = document.getElementById('wishlist-badge');
+        const cartToggleBtn = document.getElementById('cart-toggle-btn');
+        const cartBadge = document.getElementById('cart-badge');
+        const menuToggleBtn = document.getElementById('menu-toggle-btn');
+        const menuIcon = document.getElementById('menu-icon');
+        const navMenu = document.getElementById('nav-menu');
+
+        const productsGrid = document.getElementById('products-grid');
+        const categoryTabs = document.getElementById('category-tabs');
+        const productSearch = document.getElementById('product-search');
+        const productSort = document.getElementById('product-sort');
+
+        const cartDrawer = document.getElementById('cart-drawer');
+        const cartOverlay = document.getElementById('cart-overlay');
+        const cartCloseBtn = document.getElementById('cart-close-btn');
+        const cartItemsContainer = document.getElementById('cart-items-container');
+        const cartSubtotal = document.getElementById('cart-subtotal');
+        const cartTax = document.getElementById('cart-tax');
+        const cartTotal = document.getElementById('cart-total');
+        const cartCheckoutBtn = document.getElementById('cart-checkout-btn');
+
+        const modalOverlay = document.getElementById('modal-overlay');
+        const modalContentArea = document.getElementById('modal-content-area');
+        const toastContainer = document.getElementById('toast-container');
+
+        // --- FORMAT CURRENCY ---
+        function formatRupiah(number) {
+            return new Intl.NumberFormat('id-ID', {
+                style: 'currency',
+                currency: 'IDR',
+                maximumFractionDigits: 0
+            }).format(number);
+        }
+
+        // --- INITIALIZE APPLICATION ---
+        function initApp() {
+            // Setup theme
+            if (isDarkMode) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                themeIcon.className = 'fa-solid fa-sun';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                themeIcon.className = 'fa-solid fa-moon';
+            }
+
+            updateBadges();
+            renderProductsList();
+            setupEventListeners();
+        }
+
+        // --- SETUP ALL EVENT LISTENERS ---
+        function setupEventListeners() {
+            // Header scroll effect
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    mainHeader.classList.add('scrolled');
+                } else {
+                    mainHeader.classList.remove('scrolled');
+                }
+            });
+
+            // Theme toggle click
+            themeToggleBtn.addEventListener('click', () => {
+                isDarkMode = !isDarkMode;
+                localStorage.setItem('blifty_darkmode', isDarkMode);
+                if (isDarkMode) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    themeIcon.className = 'fa-solid fa-sun';
+                    showToast('Mode Gelap diaktifkan!', 'info');
+                } else {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                    themeIcon.className = 'fa-solid fa-moon';
+                    showToast('Mode Terang diaktifkan!', 'info');
+                }
+            });
+
+            // Mobile menu toggle
+            menuToggleBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                if (navMenu.classList.contains('active')) {
+                    menuIcon.className = 'fa-solid fa-xmark';
+                } else {
+                    menuIcon.className = 'fa-solid fa-bars';
+                }
+            });
+
+            // Navigation links close mobile menu
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
+                    navMenu.classList.remove('active');
+                    menuIcon.className = 'fa-solid fa-bars';
+                });
+            });
+
+            // Wishlist toggle button click (Shows dynamic custom toast message of wishlist items or acts as filter)
+            wishlistToggleBtn.addEventListener('click', () => {
+                if (wishlist.length === 0) {
+                    showToast('Wishlist Anda masih kosong.', 'warning');
+                    return;
+                }
+                showToast(`Anda memiliki ${wishlist.length} item di favorit Anda!`, 'info');
+                // Auto filter to show favorites only
+                const favProducts = products.filter(p => wishlist.includes(p.id));
+                renderProducts(favProducts);
+                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                showToast('Menampilkan produk favorit Anda.', 'success');
+            });
+
+            // Cart Drawer opening
+            cartToggleBtn.addEventListener('click', openCart);
+            cartCloseBtn.addEventListener('click', closeCart);
+            cartOverlay.addEventListener('click', closeCart);
+
+            // Category Tab filter click
+            categoryTabs.addEventListener('click', (e) => {
+                if (e.target.classList.contains('tab-btn')) {
+                    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                    e.target.classList.add('active');
+                    activeCategory = e.target.getAttribute('data-category');
+                    renderProductsList();
+                }
+            });
+
+            // Real-Time Search input
+            productSearch.addEventListener('input', (e) => {
+                currentSearchQuery = e.target.value.toLowerCase().trim();
+                renderProductsList();
+            });
+
+            // Sort dropdown change
+            productSort.addEventListener('change', (e) => {
+                currentSortOrder = e.target.value;
+                renderProductsList();
+            });
+
+            // Cart Checkout Button click
+            cartCheckoutBtn.addEventListener('click', () => {
+                if (cart.length === 0) {
+                    showToast('Keranjang Anda kosong! Silakan tambahkan beberapa produk.', 'warning');
+                    return;
+                }
+                closeCart();
+                openCheckoutModal();
+            });
+        }
+
+        // --- BADGE MANAGEMENT ---
+        function updateBadges() {
+            // Cart count (total quantities)
+            const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+            cartBadge.textContent = cartCount;
+            cartBadge.style.display = cartCount > 0 ? 'block' : 'none';
+
+            // Wishlist count
+            wishlistBadge.textContent = wishlist.length;
+            wishlistBadge.style.display = wishlist.length > 0 ? 'block' : 'none';
+        }
+
+        // --- TOAST NOTIFICATIONS ---
+        function showToast(message, type = 'success') {
+            const toast = document.createElement('div');
+            toast.className = `toast toast-${type}`;
+
+            let icon = 'fa-check-circle';
+            if (type === 'info') icon = 'fa-info-circle';
+            if (type === 'warning') icon = 'fa-triangle-exclamation';
+
+            toast.innerHTML = `
+                <i class="fa-solid ${icon}"></i>
+                <span>${message}</span>
+            `;
+
+            toastContainer.appendChild(toast);
+
+            // Trigger animation
+            setTimeout(() => toast.classList.add('show'), 50);
+
+            // Remove toast after 3 seconds
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 400);
+            }, 3000);
+        }
+
+        // --- RENDER PRODUCTS GRID ---
+        function renderProductsList() {
+            // Filter by category
+            let filtered = products.filter(p => {
+                if (activeCategory === 'all') return true;
+                return p.category === activeCategory;
+            });
+
+            // Filter by search query
+            if (currentSearchQuery !== '') {
+                filtered = filtered.filter(p =>
+                    p.name.toLowerCase().includes(currentSearchQuery) ||
+                    p.desc.toLowerCase().includes(currentSearchQuery) ||
+                    p.category.toLowerCase().includes(currentSearchQuery)
+                );
+            }
+
+            // Sort products
+            if (currentSortOrder === 'price-low') {
+                filtered.sort((a, b) => a.price - b.price);
+            } else if (currentSortOrder === 'price-high') {
+                filtered.sort((a, b) => b.price - a.price);
+            } else if (currentSortOrder === 'rating') {
+                filtered.sort((a, b) => b.rating - a.rating);
+            } else {
+                // recommended default - no sort change or sort by reviews
+                filtered.sort((a, b) => b.reviews - a.reviews);
+            }
+
+            renderProducts(filtered);
+        }
+
+        function renderProducts(productList) {
+            productsGrid.innerHTML = '';
+
+            if (productList.length === 0) {
+                productsGrid.innerHTML = `
+                    <div class="no-results" id="no-results-state">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <h3>Produk Tidak Ditemukan</h3>
+                        <p>Cobalah kata kunci lain atau bersihkan kotak pencarian.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            productList.forEach(product => {
+                const isFavorite = wishlist.includes(product.id);
+                const discountMarkup = product.oldPrice
+                    ? `<span class="old-price">${formatRupiah(product.oldPrice)}</span>`
+                    : '';
+                const tagMarkup = product.tag
+                    ? `<span class="product-badge">${product.tag}</span>`
+                    : '';
+
+                // Draw elegant star rating
+                let stars = '';
+                const fullStars = Math.floor(product.rating);
+                for (let i = 0; i < 5; i++) {
+                    if (i < fullStars) {
+                        stars += '<i class="fa-solid fa-star"></i>';
+                    } else if (i === fullStars && product.rating % 1 !== 0) {
+                        stars += '<i class="fa-solid fa-star-half-stroke"></i>';
+                    } else {
+                        stars += '<i class="fa-regular fa-star"></i>';
+                    }
+                }
+
+                const card = document.createElement('article');
+                card.className = 'product-card';
+                card.id = `product-card-${product.id}`;
+                card.innerHTML = `
+                    ${tagMarkup}
+                    <button class="product-wishlist-btn ${isFavorite ? 'active' : ''}" 
+                            data-id="${product.id}" 
+                            title="Tambahkan ke Favorit"
+                            aria-label="Wishlist">
+                        <i class="${isFavorite ? 'fa-solid' : 'fa-regular'} fa-heart"></i>
+                    </button>
+                    
+                    <div class="product-img-wrap">
+                        <img src="${product.image}" alt="${product.name}">
+                        <div class="product-overlay">
+                            <button class="product-quickview-btn" data-id="${product.id}">
+                                <i class="fa-solid fa-eye"></i> Quick View
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-details">
+                        <span class="product-cat">${product.category}</span>
+                        <h3 class="product-title">${product.name}</h3>
+                        <div class="product-rating">
+                            ${stars}
+                            <span>(${product.reviews})</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                ${formatRupiah(product.price)}
+                                ${discountMarkup}
+                            </div>
+                            <button class="add-to-cart-btn quick-add-btn" 
+                                    data-id="${product.id}" 
+                                    title="Tambahkan ke Keranjang"
+                                    aria-label="Tambah ke Keranjang">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+
+                productsGrid.appendChild(card);
+            });
+
+            setupDynamicCardEvents();
+        }
+
+        // Setup events for dynamic elements
+        function setupDynamicCardEvents() {
+            // Wishlist heart clicks
+            document.querySelectorAll('.product-wishlist-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const pId = btn.getAttribute('data-id');
+                    const product = products.find(p => p.id === pId);
+
+                    if (wishlist.includes(pId)) {
+                        wishlist = wishlist.filter(id => id !== pId);
+                        btn.classList.remove('active');
+                        btn.querySelector('i').className = 'fa-regular fa-heart';
+                        showToast(`Dihapus dari wishlist: ${product.name}`, 'warning');
+                    } else {
+                        wishlist.push(pId);
+                        btn.classList.add('active');
+                        btn.querySelector('i').className = 'fa-solid fa-heart';
+                        showToast(`Ditambahkan ke wishlist: ${product.name}`, 'success');
+                    }
+                    localStorage.setItem('blifty_wishlist', JSON.stringify(wishlist));
+                    updateBadges();
+                });
+            });
+
+            // Quick Add '+' click
+            document.querySelectorAll('.quick-add-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const pId = btn.getAttribute('data-id');
+                    const product = products.find(p => p.id === pId);
+                    // Add default color (first) and qty 1
+                    addToCart(product, 1, product.colors[0]);
+                });
+            });
+
+            // Quick View modal click
+            document.querySelectorAll('.product-quickview-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const pId = btn.getAttribute('data-id');
+                    openQuickViewModal(pId);
+                });
+            });
+        }
+
+        // --- CART OPERATIONS ---
+        function addToCart(product, quantity, color) {
+            // Check if product with exact color is already in cart
+            const existingIndex = cart.findIndex(item => item.product.id === product.id && item.color === color);
+
+            if (existingIndex > -1) {
+                cart[existingIndex].quantity += quantity;
+            } else {
+                cart.push({ product, quantity, color });
+            }
+
+            localStorage.setItem('blifty_cart', JSON.stringify(cart));
+            updateBadges();
+            showToast(`${quantity}x ${product.name} dimasukkan ke keranjang!`, 'success');
+
+            // Bounce animate the cart trigger button
+            cartToggleBtn.style.transform = 'scale(1.2)';
+            setTimeout(() => cartToggleBtn.style.transform = 'translateY(0)', 300);
+
+            // Re-render cart contents
+            renderCartContents();
+        }
+
+        function openCart() {
+            cartDrawer.classList.add('active');
+            cartOverlay.classList.add('active');
+            renderCartContents();
+        }
+
+        function closeCart() {
+            cartDrawer.classList.remove('active');
+            cartOverlay.classList.remove('active');
+        }
+
+        function renderCartContents() {
+            cartItemsContainer.innerHTML = '';
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = `
+                    <div class="cart-empty" id="cart-empty-state">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <h3>Keranjang Kosong</h3>
+                        <p>Mahakarya Anda sedang menunggu untuk dipilih.</p>
+                    </div>
+                `;
+                cartSubtotal.textContent = formatRupiah(0);
+                cartTax.textContent = formatRupiah(0);
+                cartTotal.textContent = formatRupiah(0);
+                return;
+            }
+
+            let subtotal = 0;
+
+            cart.forEach((item, index) => {
+                const itemTotal = item.product.price * item.quantity;
+                subtotal += itemTotal;
+
+                // Find color name
+                const colorIdx = item.product.colors.indexOf(item.color);
+                const colorName = colorIdx > -1 ? item.product.colorNames[colorIdx] : 'Default';
+
+                const itemRow = document.createElement('div');
+                itemRow.className = 'cart-item';
+                itemRow.id = `cart-item-${index}`;
+                itemRow.innerHTML = `
+                    <div class="cart-item-img">
+                        <img src="${item.product.image}" alt="${item.product.name}">
+                    </div>
+                    <div class="cart-item-info">
+                        <h4 class="cart-item-title">${item.product.name}</h4>
+                        <span class="cart-item-price">${formatRupiah(item.product.price)}</span>
+                        <div style="font-size:0.75rem; color:var(--text-secondary); margin-bottom: 0.5rem;">
+                            Varian: <span style="font-weight:700; color:var(--text-primary);">${colorName}</span>
+                        </div>
+                        <div class="cart-item-qty">
+                            <button class="qty-btn qty-minus-btn" data-index="${index}"><i class="fa-solid fa-minus"></i></button>
+                            <span class="qty-val">${item.quantity}</span>
+                            <button class="qty-btn qty-plus-btn" data-index="${index}"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                    <button class="cart-item-remove-btn remove-from-cart-btn" data-index="${index}" title="Hapus Item">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                `;
+
+                cartItemsContainer.appendChild(itemRow);
+            });
+
+            // Calculate taxes
+            const tax = Math.round(subtotal * 0.11); // 11% VAT
+            const total = subtotal + tax;
+
+            cartSubtotal.textContent = formatRupiah(subtotal);
+            cartTax.textContent = formatRupiah(tax);
+            cartTotal.textContent = formatRupiah(total);
+
+            setupCartActions();
+        }
+
+        function setupCartActions() {
+            // Increase Qty button
+            document.querySelectorAll('.qty-plus-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const idx = btn.getAttribute('data-index');
+                    cart[idx].quantity += 1;
+                    saveCartState();
+                });
+            });
+
+            // Decrease Qty button
+            document.querySelectorAll('.qty-minus-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const idx = btn.getAttribute('data-index');
+                    if (cart[idx].quantity > 1) {
+                        cart[idx].quantity -= 1;
+                    } else {
+                        // Remove item
+                        cart.splice(idx, 1);
+                        showToast('Item dihapus dari keranjang.', 'warning');
+                    }
+                    saveCartState();
+                });
+            });
+
+            // Remove completely button
+            document.querySelectorAll('.remove-from-cart-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const idx = btn.getAttribute('data-index');
+                    showToast(`Item dihapus: ${cart[idx].product.name}`, 'warning');
+                    cart.splice(idx, 1);
+                    saveCartState();
+                });
+            });
+        }
+
+        function saveCartState() {
+            localStorage.setItem('blifty_cart', JSON.stringify(cart));
+            updateBadges();
+            renderCartContents();
+        }
+
+        // --- QUICK VIEW MODAL ---
+        function openQuickViewModal(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            let stars = '';
+            const fullStars = Math.floor(product.rating);
+            for (let i = 0; i < 5; i++) {
+                stars += i < fullStars ? '<i class="fa-solid fa-star"></i>' : '<i class="fa-regular fa-star"></i>';
+            }
+
+            // Draw color dot selectors
+            let colorDotsMarkup = '';
+            product.colors.forEach((col, idx) => {
+                colorDotsMarkup += `
+                    <div class="color-dot ${idx === 0 ? 'active' : ''}" 
+                         style="background-color: ${col};" 
+                         data-color="${col}" 
+                         data-name="${product.colorNames[idx]}"
+                         title="${product.colorNames[idx]}">
+                    </div>
+                `;
+            });
+
+            // Draw specs list
+            let specsMarkup = '';
+            product.specs.forEach(spec => {
+                specsMarkup += `<li><i class="fa-solid fa-circle-check" style="color:var(--accent-primary); margin-right:0.5rem;"></i>${spec}</li>`;
+            });
+
+            const discountMarkup = product.oldPrice
+                ? `<span class="old-price">${formatRupiah(product.oldPrice)}</span>`
+                : '';
+
+            modalContentArea.innerHTML = `
+                <button class="modal-close-btn" id="modal-close-btn" aria-label="Tutup"><i class="fa-solid fa-xmark"></i></button>
+                <div class="quickview-grid">
+                    <!-- Images -->
+                    <div class="qv-image-column">
+                        <div class="qv-main-image">
+                            <img src="${product.image}" id="qv-large-image" alt="${product.name}">
+                        </div>
+                        <!-- Mini Thumbnails for extra interactivity -->
+                        <div class="qv-thumbs">
+                            <div class="qv-thumb active"><img src="${product.image}" alt="Thumb 1"></div>
+                            <div class="qv-thumb"><img src="https://images.unsplash.com/photo-1468495244123-6c6c332eeece?q=80&w=150" alt="Thumb 2"></div>
+                            <div class="qv-thumb"><img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=150" alt="Thumb 3"></div>
+                        </div>
+                    </div>
+
+                    <!-- Product Specs & Details -->
+                    <div class="qv-info-column">
+                        <h2 class="qv-title">${product.name}</h2>
+                        <div class="product-rating" style="margin-bottom:0.75rem;">
+                            ${stars}
+                            <span>(${product.reviews} reviews)</span>
+                        </div>
+                        <div class="qv-price">
+                            ${formatRupiah(product.price)}
+                            ${discountMarkup}
+                        </div>
+                        <p class="qv-desc">${product.desc}</p>
+                        
+                        <div class="qv-selector-wrap">
+                            <div>
+                                <span class="qv-selector-label">Warna Pilihan: </span>
+                                <span id="selected-color-label" style="font-weight:700; font-size:0.9rem;">${product.colorNames[0]}</span>
+                                <div class="color-dots" style="margin-top:0.5rem;">
+                                    ${colorDotsMarkup}
+                                </div>
+                            </div>
+                            
+                            <!-- Specifications list -->
+                            <div style="margin-top:0.5rem;">
+                                <span class="qv-selector-label">Spesifikasi Utama:</span>
+                                <ul style="list-style:none; padding-left:0; margin-top:0.5rem; font-size:0.85rem; display:grid; grid-template-columns:1fr 1fr; gap:0.5rem;">
+                                    ${specsMarkup}
+                                </ul>
+                            </div>
+
+                            <div style="margin-top:1rem;">
+                                <span class="qv-selector-label">Jumlah Unit:</span>
+                                <div class="qty-selector" style="margin-top:0.5rem;">
+                                    <div class="qty-input-box">
+                                        <button class="qty-input-btn" id="qv-qty-minus"><i class="fa-solid fa-minus"></i></button>
+                                        <span class="qty-input-val" id="qv-qty-val">1</span>
+                                        <button class="qty-input-btn" id="qv-qty-plus"><i class="fa-solid fa-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="qv-actions">
+                            <button class="btn btn-primary" id="qv-add-to-cart-btn">
+                                <i class="fa-solid fa-cart-arrow-down"></i> Masukkan Keranjang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            openModal();
+
+            // Handle color picking
+            let selectedColor = product.colors[0];
+            const colorLabelSpan = document.getElementById('selected-color-label');
+            document.querySelectorAll('.color-dot').forEach(dot => {
+                dot.addEventListener('click', () => {
+                    document.querySelectorAll('.color-dot').forEach(d => d.classList.remove('active'));
+                    dot.classList.add('active');
+                    selectedColor = dot.getAttribute('data-color');
+                    colorLabelSpan.textContent = dot.getAttribute('data-name');
+                });
+            });
+
+            // Handle Qty picking inside quickview
+            let qvQty = 1;
+            const qvQtyVal = document.getElementById('qv-qty-val');
+
+            document.getElementById('qv-qty-plus').addEventListener('click', () => {
+                qvQty += 1;
+                qvQtyVal.textContent = qvQty;
+            });
+
+            document.getElementById('qv-qty-minus').addEventListener('click', () => {
+                if (qvQty > 1) {
+                    qvQty -= 1;
+                    qvQtyVal.textContent = qvQty;
+                }
+            });
+
+            // Handle Add from Quickview click
+            document.getElementById('qv-add-to-cart-btn').addEventListener('click', () => {
+                addToCart(product, qvQty, selectedColor);
+                closeModal();
+            });
+
+            // Handle switching thumbnail images
+            const qvLargeImage = document.getElementById('qv-large-image');
+            document.querySelectorAll('.qv-thumb').forEach(thumb => {
+                thumb.addEventListener('click', () => {
+                    document.querySelectorAll('.qv-thumb').forEach(t => t.classList.remove('active'));
+                    thumb.classList.add('active');
+                    qvLargeImage.src = thumb.querySelector('img').src;
+                });
+            });
+
+            // Close button click
+            document.getElementById('modal-close-btn').addEventListener('click', closeModal);
+        }
+
+        // --- CHECKOUT MODAL ---
+        function openCheckoutModal() {
+            // Compile order description
+            let summaryHTML = '';
+            let totalToPay = 0;
+
+            cart.forEach(item => {
+                const priceAll = item.product.price * item.quantity;
+                totalToPay += priceAll;
+                summaryHTML += `
+                    <div style="display:flex; justify-content:space-between; font-size:0.85rem; margin-bottom:0.25rem;">
+                        <span>${item.quantity}x ${item.product.name}</span>
+                        <span>${formatRupiah(priceAll)}</span>
+                    </div>
+                `;
+            });
+
+            const taxToPay = Math.round(totalToPay * 0.11);
+            const grandTotalPay = totalToPay + taxToPay;
+
+            modalContentArea.innerHTML = `
+                <button class="modal-close-btn" id="modal-close-btn" aria-label="Tutup"><i class="fa-solid fa-xmark"></i></button>
+                <div class="checkout-modal-content">
+                    <div class="checkout-header">
+                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                        <h2>Formulir Pembayaran</h2>
+                        <p>Lengkapi detail pengiriman Anda untuk menyelesaikan pesanan.</p>
+                    </div>
+                    
+                    <div class="checkout-order-summary">
+                        <h4>Ringkasan Pesanan</h4>
+                        ${summaryHTML}
+                        <div style="display:flex; justify-content:space-between; font-size:0.9rem; font-weight:700; border-top:1px dashed var(--border-color); padding-top:0.5rem; margin-top:0.5rem;">
+                            <span>Total Tagihan (Inc. PPN)</span>
+                            <span>${formatRupiah(grandTotalPay)}</span>
+                        </div>
+                    </div>
+
+                    <form class="checkout-form" id="checkout-main-form" onsubmit="event.preventDefault(); submitCheckout();">
+                        <div class="form-group">
+                            <label for="shipping-name">Nama Penerima Lengkap</label>
+                            <input type="text" id="shipping-name" required placeholder="Contoh: Budi Santoso">
+                        </div>
+                        <div class="form-group">
+                            <label for="shipping-phone">Nomor Telepon / WhatsApp</label>
+                            <input type="tel" id="shipping-phone" required placeholder="Contoh: 08123456789">
+                        </div>
+                        <div class="form-group">
+                            <label for="shipping-address">Alamat Pengiriman Lengkap</label>
+                            <textarea id="shipping-address" required placeholder="Nama Jalan, Nomor Rumah, RT/RW, Kecamatan, Kota, Kode Pos..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="payment-method">Metode Pembayaran</label>
+                            <select id="payment-method" style="padding: 0.85rem 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-md); background: var(--bg-tertiary); color: var(--text-primary);">
+                                <option value="bank-transfer">Transfer Virtual Account Bank (BCA, Mandiri, BNI)</option>
+                                <option value="e-wallet">E-Wallet (Gopay, OVO, Dana)</option>
+                                <option value="credit-card">Kartu Kredit / Debit Premium</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="margin-top:1rem; width:100%;">
+                            <i class="fa-solid fa-circle-check"></i> Proses Pembayaran Sekarang
+                        </button>
+                    </form>
+                </div>
+            `;
+
+            openModal();
+
+            // Close button click
+            document.getElementById('modal-close-btn').addEventListener('click', closeModal);
+        }
+
+        // --- SUBMIT CHECKOUT (SIMULASI SUKSES) ---
+        function submitCheckout() {
+            const name = document.getElementById('shipping-name').value;
+
+            // Show dynamic loading on button
+            const submitBtn = document.querySelector('.checkout-form button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Memproses Pesanan Anda...';
+
+            setTimeout(() => {
+                // Empty the cart
+                cart = [];
+                localStorage.setItem('blifty_cart', JSON.stringify(cart));
+                updateBadges();
+
+                // Inject gorgeous success screen inside modal
+                modalContentArea.innerHTML = `
+                    <div class="success-card">
+                        <div class="success-icon-wrap">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <h2>Transaksi Sukses!</h2>
+                        <p>Terima kasih <strong>${name}</strong>, pembayaran Anda telah berhasil kami verifikasi. Pesanan Anda akan segera kami kemas dan kirimkan dalam waktu 24 jam.</p>
+                        <div style="font-size:0.85rem; color:var(--text-secondary); margin-bottom: 2rem;">
+                            No. Invoice: <span style="font-family:monospace; font-weight:700; color:var(--text-primary);">INV-2026-BLF-${Math.floor(100000 + Math.random() * 900000)}</span>
+                        </div>
+                        <button class="btn btn-primary" id="success-done-btn">
+                            <i class="fa-solid fa-house"></i> Kembali Ke Beranda
+                        </button>
+                    </div>
+                `;
+
+                showToast('Pembelian berhasil! Terima kasih.', 'success');
+
+                document.getElementById('success-done-btn').addEventListener('click', () => {
+                    closeModal();
+                    // Scroll to top
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }, 2500); // 2.5 seconds loading simulation
+        }
+
+        // --- MODAL UTILITY ACTIONS ---
+        function openModal() {
+            modalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Lock background scroll
+        }
+
+        function closeModal() {
+            modalOverlay.classList.remove('active');
+            document.body.style.overflow = ''; // Unlock scroll
+        }
+
+        // Close modal when clicking outside content area
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
+        });
+
+        // Initialize application on page load
+        window.addEventListener('DOMContentLoaded', initApp);
+    </script>
+</body>
+
+</html>
